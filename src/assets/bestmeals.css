@@ -1,0 +1,140 @@
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: black;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+
+.meal-container {
+  display: flex;
+  width: 100%;
+  height: 100vh; 
+}
+
+
+.left-bestmeals,
+.right-bestmeals {
+  width: 50%;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+
+.left-bestmeals {
+  background-color: white;
+  border-right: 4px solid #000; 
+}
+
+
+.right-bestmeals {
+  background-color: black;
+}
+
+
+.left-bestmeals h2{
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+.right-bestmeals h2 {
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 20px;
+  color:white;
+ 
+}
+
+
+.meal-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+
+.meal-item {
+  text-align: center;
+  width: 450px;
+}
+
+.meal-image {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.left-bestmeals p {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 30px;
+}
+.right-bestmeals p{
+  color:white;
+  font-size: 30px;
+}
+.meal-container1 {
+  display: flex;
+  width: 100%;
+  height: 100vh; 
+}
+.bottom-leftmeals,.bottom-rightmeals{
+  width: 50%;
+  padding: 20px;
+  overflow-y: auto;
+}
+.bottom-leftmeals{
+  background-color: black;
+  border-right: 4px solid #000;
+}
+.bottom-leftmeals h2{
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: white;
+}
+.meal-list1{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+.meal-item {
+  text-align: center;
+  width: 450px;
+}
+
+.meal-image {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px black;
+}
+.bottom-leftmeals p{
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+}
+.bottom-rightmeals{
+  background-color: white;
+  border-right: 4px solid #000;
+}
+.bottom-rightmeals h2{
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 20px;
+  color:black;
+}
+.bottom-rightmeals p{
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 30px;
+  color: black;
+}

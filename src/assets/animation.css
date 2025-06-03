@@ -1,0 +1,40 @@
+.home_container {
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }
+  
+  .text_content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    margin-bottom: 70px;
+    margin-left: 50px;
+  }
+  
+  .main_heading {
+    font-size: 80px;
+    
+    font-weight: bold;
+  }
+  
+  .home_text {
+    font-size: 2rem;
+  }
+  

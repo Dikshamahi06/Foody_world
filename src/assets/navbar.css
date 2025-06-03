@@ -1,0 +1,41 @@
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    margin:0px; 
+    background-color: black;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: white 1px solid;
+     
+
+}     
+.nav_logo{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 70px;
+    display: flex;
+    color: white;
+    font-weight: bolder;
+    align-items: center;
+    margin-left: 60px;
+}  
+.nav_list {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 35px;
+    display: flex;
+    justify-content: space-between;
+    gap:90px;
+    color: white;
+    margin-right: 50px;
+    font-weight: bolder;
+    text-decoration: none;
+    align-items: center;
+
+}
+.nav_list a{
+    color:white;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: xx-large;
+    margin-right: 60px;
+}
