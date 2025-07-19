@@ -61,8 +61,7 @@ export default function Signup() {
         </div>
         <h2>
           People who use our service may have uploaded <br />
-          your contact information to Instagram{" "}
-          <a href="#">Learn More</a>
+          your contact information to Instagram{" "}<a href="#">Learn More</a>
         </h2>
         <h4>
           By signing up, you agree to our Terms, <br />

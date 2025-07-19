@@ -27,8 +27,6 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", userSchema);
 
-// Get all users
-
 
 
 
@@ -56,24 +54,40 @@ app.get('/api/users', async (req, res) => {
   }
 });
 
-app.delete('/api/users/:id', async (req, res) => {
-  const userId = req.params.id;
-
+app.delete("/api/users/:id", async (req, res) => {
   try {
-    
-    const result = await User.findByIdAndDelete(userId);
-    
-    if (!result) {
-      return res.status(404).json({ message: 'User not found' });
+    const deletedUser = await User.findByIdAndDelete(req.params.id);
+
+    if (!deletedUser) {
+      return res.status(404).json({ message: "User not found" });
     }
 
-    res.json({ message: 'User deleted successfully' });
+    res.status(200).json({ message: "User deleted successfully", deletedUser });
   } catch (err) {
-    res.status(500).json({ message: 'Server error', error: err.message });
+    res.status(500).json({ message: "Server error", error: err.message });
+  }
+});
+app.put("/api/users/:id", async (req, res) => {
+  const { email, password, fullName, username, location } = req.body;
+
+  try {
+    const updatedUser = await User.findByIdAndUpdate(
+      req.params.id,
+      { email, password, fullName, username, location }, // Fields to update
+      { new: true } // Return the updated document
+    );
+
+    if (!updatedUser) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    res.status(200).json({ message: "User updated successfully", updatedUser });
+  } catch (err) {
+    res.status(500).json({ message: "Server error", error: err.message });
   }
 });
 
 
 app.listen(PORT, () => {
-  console.log(`✅ Server running at http://localhost:${PORT}`);
+  console.log(`✅ Server running at http://localhost:${PORT}/api/users`);
 });

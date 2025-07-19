@@ -1,52 +1,77 @@
-
-nav{
-    display: flex;
-    justify-content: space-between;
-    margin:0px; 
-    background-color: black;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    border: white 1px solid;
-     
-
-}     
-.nav_logo{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 70px;
-    display: flex;
-    color: white;
-    font-weight: bolder;
-    align-items: center;
-    margin-left: 60px;
-}  
-.nav_logo span{
-    color: red;
-    font-size: 80px;
-    margin-right: 10px;
+/* Base Styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  border-radius: 10px;
+  border: 1px solid white;
+  padding: 10px 20px;
+  flex-wrap: wrap;
 }
+
+.nav_logo {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.nav_logo span {
+  color: red;
+  font-size: 2.5rem;
+  margin-right: 10px;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
 .nav_list {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 35px;
-    display: flex;
-    justify-content: space-between;
-    gap:90px;
-    color: white;
-    margin-right: 50px;
-    font-weight: bolder;
-    text-decoration: none;
-    align-items: center;
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  align-items: center;
+}
 
+.nav_list a {
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+    padding: 10px 35px;
 }
-.nav_list a{
-    color:white;
-    text-decoration: none;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: xx-large;
-    margin-right: 60px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+.nav_list a:hover {
+  color: red;
+  transform: scale(1.1);
 }
-.nav_list a:hover{
-    transform: scale(1.1);
-    color: red;
-    
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav_list {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    margin-top: 10px;
+  }
+
+  .nav_list.open {
+    display: flex;
+  }
+
+  .nav_list a {
+    margin: 10px 0;
+    font-size: 1.1rem;
+  }
 }
