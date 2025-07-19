@@ -1,9 +1,12 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
+
 const app = express();
 const PORT = 5000;
+
 
 app.use(cors());
 app.use(express.json()); 
@@ -18,7 +21,7 @@ mongoose.connect("mongodb://localhost:27017/", {
 
 
 const userSchema = new mongoose.Schema({
-  email: {type:String},
+  email: { type: String, unique: true },
   password: {type:String},
   fullName: {type:String},
   username: {type:String},
@@ -26,6 +29,49 @@ const userSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model("User", userSchema);
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+
+app.post('/api/signup', async (req, res) => {
+  const { email, password, fullName, username, location } = req.body;
+
+  try {
+    const existingUser = await User.findOne({ email });
+    if (existingUser) return res.status(400).json({ message: "Email already in use" });
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const newUser = new User({
+      email,
+      password: hashedPassword,
+      fullName,
+      username,
+      location
+    });
+
+    await newUser.save();
+    res.status(201).json({ message: "User registered successfully" });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+app.post('/api/login', async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const user = await User.findOne({ email });
+    if (!user) return res.status(400).json({ message: "User not found" });
+
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) return res.status(400).json({ message: "Invalid credentials" });
+
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "1h" });
+
+    res.json({ message: "Login successful", token, user: { fullName: user.fullName, email: user.email } });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
 
 
 
@@ -87,6 +133,22 @@ app.put("/api/users/:id", async (req, res) => {
   }
 });
 
+const verifyToken = (req, res, next) => {
+  const token = req.headers["authorization"];
+  if (!token) return res.status(403).json({ message: "No token provided" });
+
+  try {
+    const decoded = jwt.verify(token.split(" ")[1], process.env.JWT_SECRET);
+    req.user = decoded;
+    next();
+  } catch (err) {
+    res.status(401).json({ message: "Invalid token" });
+  }
+};
+app.get("/api/profile", verifyToken, async (req, res) => {
+  const user = await User.findById(req.user.id);
+  res.json({ user });
+});
 
 app.listen(PORT, () => {
   console.log(`✅ Server running at http://localhost:${PORT}/api/users`);
