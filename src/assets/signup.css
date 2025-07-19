@@ -32,7 +32,6 @@ label ,select{
     font-size: x-large;
     font-family: 'Times New Roman', Times, serif;
     margin:20px;
-    font-size: x-large;
     
 }
 
@@ -100,9 +99,10 @@ button{
 
 }
 a{
+a{
     color: red;
+    /* Add other link styles here if needed */
 }
-.location{
     display: flex;
     justify-content: flex-start;
     size: 30px;

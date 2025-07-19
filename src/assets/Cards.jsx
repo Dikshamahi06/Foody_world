@@ -5,6 +5,6 @@ export const Cards = ({src,alt,width,height,onclick}) => {
     alert("ok")
   }
   return (
-    <img src={src} alt={alt} width={width} height={height} onclick={handleclick} />
+    <img src={src} alt={alt} width={width} height={height} onClick={handleclick} />
   )
 }
