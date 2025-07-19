@@ -6,6 +6,7 @@ import { Cards } from './assets/Cards';
 import { Bestmeals } from './assets/Bestmeals';
 import Login from './assets/Login';
 import Signup from './assets/Signup';
+import Profile from './assets/Profile';
 import { Recipes } from './assets/Recipes';
 
 
@@ -80,6 +81,7 @@ function AppWrapper() {
        
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/profile" element={<Profile />} />
      
 
       </Routes>

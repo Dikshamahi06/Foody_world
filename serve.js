@@ -2,7 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 const app = express();
 const PORT = 5000;
@@ -29,8 +30,7 @@ const userSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model("User", userSchema);
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
+
 
 app.post('/api/signup', async (req, res) => {
   const { email, password, fullName, username, location } = req.body;
@@ -55,23 +55,7 @@ app.post('/api/signup', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-app.post('/api/login', async (req, res) => {
-  const { email, password } = req.body;
 
-  try {
-    const user = await User.findOne({ email });
-    if (!user) return res.status(400).json({ message: "User not found" });
-
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) return res.status(400).json({ message: "Invalid credentials" });
-
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "1h" });
-
-    res.json({ message: "Login successful", token, user: { fullName: user.fullName, email: user.email } });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
 
 
 
@@ -149,6 +133,7 @@ app.get("/api/profile", verifyToken, async (req, res) => {
   const user = await User.findById(req.user.id);
   res.json({ user });
 });
+
 
 app.listen(PORT, () => {
   console.log(`✅ Server running at http://localhost:${PORT}/api/users`);

@@ -1,29 +1,36 @@
 import { useNavigate } from "react-router-dom";
-
+import { useState } from "react";
 import "./login.css";
 
 export default function Login() {
+  const [email, setEmail] = useState("");
+
+  const [password, setPassword] = useState("");
+  
+
   const navigate = useNavigate();
-  const handleLogin = async () => {
-  const res = await fetch("http://localhost:5000/api/login", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      email: email,  // replace with actual state values
-      password: password
-    })
-  });
+const handleLogin = async () => {
+  try {
+    const res = await fetch("http://localhost:5000/api/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password })
+    });
 
-  const data = await res.json();
+    const data = await res.json();
 
-  if (res.ok) {
-    localStorage.setItem("token", data.token);
-    alert("✅ Login Successful");
-    navigate("/");  // or wherever you want
-  } else {
-    alert(`❌ ${data.message}`);
+    if (res.ok) {
+      localStorage.setItem("token", data.token);
+      alert("✅ Login Successful");
+      navigate("/profile");  
+    } else {
+      alert(`❌ ${data.message}`);
+    }
+  } catch (err) {
+    alert("Something went wrong. Please try again later.");
   }
 };
+
 
     
   
@@ -32,9 +39,18 @@ export default function Login() {
     <>
       <div className="login">
         <h1>Foody World 🍕 Login</h1>
-        <input type="text" placeholder="Phone Number, Username, Email" />
-        <br />
-        <input type="password" placeholder="Password" />
+                <input
+          type="text"
+          placeholder="Phone Number, Username, Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
         <br />
         <button onClick={handleLogin}>🍜 Login</button>
         <hr /> 
