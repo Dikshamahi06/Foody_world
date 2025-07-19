@@ -19,6 +19,11 @@ nav{
     align-items: center;
     margin-left: 60px;
 }  
+.nav_logo span{
+    color: red;
+    font-size: 80px;
+    margin-right: 10px;
+}
 .nav_list {
     font-family: 'Times New Roman', Times, serif;
     font-size: 35px;
@@ -38,4 +43,10 @@ nav{
     font-family: 'Times New Roman', Times, serif;
     font-size: xx-large;
     margin-right: 60px;
+    transition: scale 0.3s ease box-shadow 0.3s ease;
+}
+.nav_list a:hover{
+    transform: scale(1.1);
+    color: red;
+    
 }

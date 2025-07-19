@@ -19,7 +19,8 @@ const Home = () => (
 
 const Gallery = () => (
   <>
-    <Cards src="https://i.gifer.com/11o9.gif" alt="online1" width="700" height="600" onclick={handleerror} />
+    <div className="gallery-container">
+      <Cards src="https://i.gifer.com/11o9.gif" alt="online1" width="700" height="600" onclick='handleclick' />
     <Cards src="https://i.pinimg.com/originals/65/ed/e5/65ede51b5fd0c065d954bfd8ca8eab80.gif" alt="online2" width="700" height="600" />
     <Cards src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExa244azZ3ZWhhcHo1b3E5NDNvYmZiYm5laDF4M3Y5bzBwMHI4b3hhcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ucXbjTmJPwKUE/giphy.gif" alt="onlinw3" width="700" height="600"/>
     <Cards src="https://media.giphy.com/media/mRVz4HPxR7Fe6ac0mK/giphy.gif" alt="onlinw3" width="700" height="600"/>
@@ -27,6 +28,9 @@ const Gallery = () => (
     <Cards src="https://media.giphy.com/media/17fWNt4GSIK6HI73Pa/giphy.gif" alt="onlinw3" width="700" height="600"/>
     <Cards src="https://media.giphy.com/media/g0LNPgMdIoKU5gdwgY/giphy.gif" alt="onlinw3" width="700" height="600"/>
     <Cards src="https://media.giphy.com/media/u2SkBAtW5vZgQLFDmZ/giphy.gif" alt="onlinw3" width="700" height="600"/>
+    <Cards src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGNtdnFtMWx1Mzd2dWRvcmhzODVqM2Q3cmRuZmRncGRyaXRhMDVpeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2xgx8l1mzocWzl1zqn/giphy.gif" alt="onlinw3" width="700" height="600"/>
+    <Cards src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWIweXd3cTVlYWpoMXlkZWJvZHFjY284MTBqeTltYWJmMzZtMzJmMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/k6jciHAEPdkFu5yNpF/giphy.gif" alt="onlinw3" width="700" height="600"/>
+    </div>
   </>
 );
 

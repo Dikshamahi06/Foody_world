@@ -4,6 +4,12 @@
     font-size: xx-large;
     color: white;
     margin:20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+.list1 a:hover{
+    transform: scale(1.1);
+    color:red;
 }
 .list2 a{
     display: flex;
@@ -11,6 +17,12 @@
     font-size: xx-large;
     color: white;
     margin:20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+.list2 a:hover{
+    transform: scale(1.1);
+    color:red;
 }
 .list3 a{
     display: flex;
@@ -18,6 +30,13 @@
     font-size: xx-large;
     color: white;
     margin:20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.list3 a:hover{
+    transform: scale(1.1);
+    color:red;
+    
+   
 }
 .list4 a{
     display: flex;
@@ -25,6 +44,11 @@
     font-size: xx-large;
     color: white;
     margin:20px;
+    transition: scale 0.3s ease, box-shadow 0.3s ease;
+}
+.list4 a:hover{
+    transform: scale(1.1);
+    color:red;
 }
 .list5 a{
     display: flex;
@@ -32,6 +56,11 @@
     font-size: xx-large;
     color: white;
     margin:20px;
+    transition: scale 0.3s ease, box-shadow 0.3s ease;
+}
+.list5 a:hover{
+    transform: scale(1.1);
+    color:red;
 }
 .list6 a{
     display: flex;
@@ -39,6 +68,11 @@
     font-size: xx-large;
     color: white;
     margin:20px;
+    transition: scale 0.3s ease, box-shadow 0.3s ease;
+}
+.list6 a:hover{
+    transform: scale(1.1);
+    color:red;
 }
 .recipe-container{
     display: flex;
@@ -58,4 +92,11 @@
     justify-content: first baseline;
     border-left: white 1px solid;
 
+}
+.heading1 h1,.heading2 h1,.heading3 h1,.heading4 h1,.heading5 h1,.heading6 h1{
+    font-size: xx-large;
+    color: white;
+    margin: 20px;
+   
+    font-weight: 1000;
 }

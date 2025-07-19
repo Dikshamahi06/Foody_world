@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="nav_logo">FOOdy_world</div>
+      <div className="nav_logo"><span>🍟</span>OOdy_world</div>
       <ul className="nav_list">
         <a href="#" onClick={(e) => { e.preventDefault(); navigate("/"); }}>Home</a>
         <a href="#" onClick={(e) => { e.preventDefault(); navigate("/gallery"); }}>Choose Your Order</a>

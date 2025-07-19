@@ -13,7 +13,7 @@ export const Bestmeals = () => {
     {src:'https://www.indianhealthyrecipes.com/wp-content/uploads/2023/03/kadhi-recipe-kadhi-pakora.jpg',alt:'Kadhi Pakoda'},
     {src:'https://www.umami.recipes/api/image/recipes/1TD1h1D2VYSjkcuKMTt5/images/4WvNQbRJBaxQXK0ohLbzhz?w=3840&q=75',alt:'Dal Makhani'},
     {src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbvfsFw6JBQ9y1vxzn4p5v_1TTgBFBY2EDPQ&s',alt:'Palak Paneer'},
-    {src:'https://i.ytimg.com/vi/bcQOAUY7iIA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCJjQbfLbv-Nz_dEE0u23Y_Ea32LQ',alt:'Stuffed Paratha (Aloo, Gobi, Paneer)'},
+    {src:'https://biancazapatka.com/wp-content/uploads/2019/07/aloo-paratha-indian-potato-stuffed-flatbread-recipe-vegan.jpg',alt:'Stuffed Paratha (Aloo, Gobi, Paneer)'},
     {src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuLi7oNUX5EqQePcYjX-7KPV0w3niXxjffFA&s',alt:'Baingan Bharta'},
     {src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtJbruKCN9mGuTZoQCHOyHD3qwlaqCreZvnQ&s',alt:'Matar Paneer'},
   ];

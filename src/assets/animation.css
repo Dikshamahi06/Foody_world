@@ -5,8 +5,8 @@
     background-position: center;
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content:center;
+    align-items:center;
   }
   
   .overlay {
@@ -26,15 +26,30 @@
     color: white;
     margin-bottom: 70px;
     margin-left: 50px;
+    font-family: 'Georgia', serif;
   }
   
   .main_heading {
     font-size: 80px;
-    
+    font-family: 'Georgia', serif;
     font-weight: bold;
   }
   
   .home_text {
     font-size: 2rem;
+    font-family: 'Georgia', serif;
+  }
+  .search_box{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .search_input{
+    width:900px;
+  }
+  .search_btn{
+    width: 200px;
+    background-color: red;
+    color: white;
+    font-weight: bolder;
   }
   

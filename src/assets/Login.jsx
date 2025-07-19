@@ -10,12 +10,12 @@ export default function Login() {
   return (
     <>
       <div className="login">
-        <h1>LOGIN</h1>
+        <h1>Foody World 🍕 Login</h1>
         <input type="text" placeholder="Phone Number, Username, Email" />
         <br />
         <input type="password" placeholder="Password" />
         <br />
-        <button onClick={() => navigate("/")}>Log in</button>
+        <button onClick={() => navigate("/")}>🍜 Login</button>
         <hr /> 
         <h6> OR</h6><hr />
         <br />
@@ -28,7 +28,7 @@ export default function Login() {
         </h3>
           <span
             onClick={() => navigate("/signup")}
-            style={{ cursor: "pointer", color: "blue" }}
+            style={{ cursor: "pointer", color: "red" }}
           >
             Sign up
           </span>

@@ -5,15 +5,37 @@ export default function Signup() {
   const navigate = useNavigate();
 
   function handlebutton() {
-    alert("Sign up successfully");
-    navigate("/"); // Navigate to Login page after signup
-  }
+  const email = document.querySelector("input[placeholder='Mobile Number or Email']").value;
+  const password = document.querySelector("input[placeholder='Password']").value;
+  const fullName = document.querySelector("input[placeholder='Full Name']").value;
+  const username = document.querySelector("input[placeholder='Username']").value;
+  const location = document.getElementById("location").value;
+
+  // Send data to backend
+  fetch("http://localhost:5000/api/signup", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ email, password, fullName, username, location }),
+  })
+    .then(res => res.json())
+    .then(data => {
+      alert(data.message);
+      navigate("/");
+    })
+    .catch(err => {
+      alert("Something went wrong!");
+      console.error(err);
+    });
+}
+
 
   return (
     <>
       <div className="signup">
-        <h1>SIGN UP</h1>
-        {/* <h3>Get yourself what you are craving for?</h3> */}
+        <h1>🍽️ Join Foody World Today!</h1>
+      
        
 <br />
         <hr />
@@ -47,13 +69,14 @@ export default function Signup() {
           Privacy Policy and Cookies Policy.
         </h4>
         <button onClick={handlebutton}>
-          Sign up
+          🎉 Create Account
+
         </button>
         <div className="other">
         <h6>Have an account?</h6>
         <span
           onClick={() => navigate("/login")}
-          style={{ cursor: "pointer", color: "blue" }}
+          style={{ cursor: "pointer", color: "red" }}
         >
           Login
         </span>
